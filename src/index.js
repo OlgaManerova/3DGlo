@@ -1,5 +1,5 @@
-import moduleOne from './modules/one'
-import moduleTwo from './modules/two'
+import timer from './modules/timer'
+import date from './modules/date'
 
-moduleOne();
-moduleTwo();
+timer('20 december 2021');
+date();
