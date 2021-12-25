@@ -1,5 +1,7 @@
 import timer from './modules/timer'
-import date from './modules/date'
+import menu from './modules/menu'
+import modal from './modules/modal'
 
 timer('20 december 2021');
-date();
+menu();
+modal();
