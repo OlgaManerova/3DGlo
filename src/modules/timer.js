@@ -19,36 +19,25 @@ const timer = (deadline) => {
     const updateClock = () => {
         let getTime = getTimeRemaining();
 
-        timerHours.textContent = getTime.hours;
-        timerMinutes.textContent = getTime.minutes;
-        timerSeconds.textContent = getTime.seconds;
-
-        // let timer = setTimeout(updateClock, 1000);
-
-        let timer = setInterval(function() {
-            updateClock();
-            if (getTime.timeRemaining > 0) {
-                timer();
-            } else if (getTime.timeRemaining <= 0) {
-                clearInterval(timer);
-    
-                timerHours.innerHTML = '00';
-                timerMinutes.innerHTML = '00';
-                timerSeconds.innerHTML = '00';
-            }
-        }, 1000)
-
-        // вариант 1
-
-
-        // вариант 2
-        // if (getTime.timeRemaining > 0) {
-        //     setInterval(updateClock, 1000);
-        // }
-        // console.log('вывод');
+        timerHours.textContent = getTime.hours < 10 ? '0'+ getTime.hours : getTime.hours;
+        timerMinutes.textContent = getTime.minutes < 10 ? '0'+ getTime.minutes : getTime.minutes;
+        timerSeconds.textContent = getTime.seconds < 10 ? '0'+ getTime.seconds : getTime.seconds;
+        console.log('секунда');
     }
 
-    updateClock();
+    let interval = setInterval(function() {
+        let getTime = getTimeRemaining();
+        updateClock();
+
+        if (getTime.timeRemaining <= 0) {
+            clearInterval(interval);
+
+            timerHours.innerHTML = '00';
+            timerMinutes.innerHTML = '00';
+            timerSeconds.innerHTML = '00';
+        }
+    }, 1000);
+
 }
 
 export default timer
