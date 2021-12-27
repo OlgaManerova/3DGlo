@@ -9,33 +9,34 @@ const modal = () => {
     const maxCoord = 200;
 
     const windowInnerWidth = window.innerWidth
-    console.log(windowInnerWidth);
 
     modalContent.style.transform = `translateY(0)px)`;
 
-    function animate() {
-        coord += 5;
+    // function animate() {
+    //     coord += 5;
 
-        idAnimation = requestAnimationFrame(animate);
+    //     idAnimation = requestAnimationFrame(animate);
 
-        if (coord < maxCoord && windowInnerWidth > 768) {
-            modalContent.style.transform = `translateY(${coord}px)`;
-        } else {
-            cancelAnimationFrame(idAnimation);
-        }
-    }
+    //     if (coord < maxCoord && windowInnerWidth > 768) {
+    //         modalContent.style.transform = `translateY(${coord}px)`;
+    //     } else {
+    //         cancelAnimationFrame(idAnimation);
+    //     }
+    // };
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             modal.style.display = 'block';
-            animate();
         })
-    })
+    });
 
-    popupBtnClose.addEventListener('click', () => {
-        modal.style.display = '';
-        modalContent.style.transform = `translateY(0px)`;
-    })
+    //закрытие модального окна по клику вне попапа
+
+    modal.addEventListener('click', (e) => {
+        if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
+            modal.style.display = 'none';
+        }
+    });
 }
 
 export default modal
