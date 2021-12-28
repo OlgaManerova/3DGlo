@@ -4,8 +4,6 @@ const menu = () => {
     const closeBtn = menu.querySelector('.close-btn');
     const menuItems = menu.querySelectorAll('ul>li>a');
 
-    console.dir(menuItems);
-
     const handleMenu = () => {
         menu.classList.toggle('active-menu');
     }
@@ -18,7 +16,7 @@ const menu = () => {
             handleMenu();
         }
 
-        console.log(e.target.classList.contains('active-menu'));
+        // console.log(e.target.classList.contains('active-menu'));
     });
 }
 
