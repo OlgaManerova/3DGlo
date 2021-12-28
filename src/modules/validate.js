@@ -4,8 +4,6 @@ const validate = () => {
     const inputEmail = document.querySelectorAll('input[type=email]');
     const inputTel = document.querySelectorAll('input[type=tel]');
 
-    console.log(inputTel);
-
     inputs.forEach(input => {
         input.addEventListener('input', () => {
             input.value = input.value.replace(/\D+/, '');
