@@ -1,32 +1,26 @@
+import { animate } from './helpers'
+
 const modal = () => {
     const buttons = document.querySelectorAll('.popup-btn');
     const modal = document.querySelector('.popup');
     const modalContent = document.querySelector('.popup-content');
     const popupBtnClose = modal.querySelector('.popup-close');
 
-    let idAnimation;
-    let coord = 0;
-    const maxCoord = 200;
+    modalContent.style.display = 'block';
 
-    const windowInnerWidth = window.innerWidth
-
-    modalContent.style.transform = `translateY(0)px)`;
-
-    // function animate() {
-    //     coord += 5;
-
-    //     idAnimation = requestAnimationFrame(animate);
-
-    //     if (coord < maxCoord && windowInnerWidth > 768) {
-    //         modalContent.style.transform = `translateY(${coord}px)`;
-    //     } else {
-    //         cancelAnimationFrame(idAnimation);
-    //     }
-    // };
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-            modal.style.display = 'block';
+            animate({
+                duration: 1000,
+                timing(timeFraction) {
+                  return timeFraction;
+                },
+                draw(progress) {
+                    modal.style.display = 'block';
+                    modalContent.style.opacity = progress;
+                }
+            });
         })
     });
 
