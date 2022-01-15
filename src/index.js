@@ -5,6 +5,7 @@ import validate from './modules/validate'
 import tabs from './modules/tabs'
 import slider from './modules/slider'
 import calc from './modules/calc'
+import mailing from './modules/mailing'
 
 timer('20 december 2021');
 menu();
@@ -13,3 +14,4 @@ validate();
 tabs();
 slider();
 calc(100);
+mailing();
