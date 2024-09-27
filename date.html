@@ -56,6 +56,12 @@
 	<div class="timer">
 		<div class="timer-title">Оставьте заявку сейчас и получите дизайн интерьера 25кв<sup>2</sup> бесплатно!*
 		</div>
+        <div class="timer-action-day">
+			Добрый <span id="hello">день</span>! <br>
+            Сегодня: <span id="day">Понедельник</span><br>
+            Текущее время: <span id="time">12:05:15 PM</span><br>
+            До нового года осталось: <span id="ng">175 дней</span><br>
+		</div>
 		<div class="timer-action">
 			До конца акции осталось
 		</div>
@@ -131,7 +137,7 @@
 		</div>
 
 
-		<div class="service-tab row d-none">
+		<div class="service-tab row">
 			<div class="col-md-6 col-sm-6">
 				<img src="images/service/service-2.png" alt="">
 			</div>
@@ -147,7 +153,7 @@
 		</div>
 
 
-		<div class="service-tab row d-none">
+		<div class="service-tab row">
 			<div class="service-outer col-md-6 col-sm-6 col-12">
 				<div class="service-inner">
 					<p>Услуга, направленная на разработку дизайна с анимацией, дизайн интерьера и экстерьера</p>
@@ -179,12 +185,12 @@
 			<a href="#" class="portfolio-btn prev" id="arrow-left"></a>
 			<a href="#" class="portfolio-btn next" id="arrow-right"></a>
 			<ul class="portfolio-dots">
-				<!-- <li class="dot dot-active"></li>
+				<li class="dot dot-active"></li>
 				<li class="dot"></li>
 				<li class="dot"></li>
 				<li class="dot"></li>
 				<li class="dot"></li>
-				<li class="dot"></li> -->
+				<li class="dot"></li>
 			</ul>
 		</ul>
 	</div>
@@ -206,11 +212,11 @@
 						<option value="1.4">Интерьер Частного дома</option>
 						<option value="2">Интерьер Офиса</option>
 					</select>
-					<input type="text" min="1" step="1" class="calc-item calc-square validate-number"
+					<input type="text" min="1" step="1" class="calc-item calc-square"
 								 placeholder="Общая площадь*">
-					<input type="text" min="1" step="1" class="calc-item calc-count validate-number"
+					<input type="text" min="1" step="1" class="calc-item calc-count"
 								 placeholder="Количество помещений">
-					<input type="text" min="1" step="1" class="calc-item calc-day validate-number"
+					<input type="text" min="1" step="1" class="calc-item calc-day"
 								 placeholder="Срок исполнения (в днях)">
 					<div class="calc-total">ИТОГО: <span id="total">0</span></div>
 					<div class="calc-mini">* стоимость по умолчанию расчитывается на 1 помещение и срок 10 дней <br>
